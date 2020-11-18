@@ -30,24 +30,35 @@
 # print(obj.sub_variabila)
 # print(obj.super_variabila)
 
+#
+# class SuperClass:
+#     def __init__(self):
+#         self.super_variabila = 11
+#
+#     def metoda1(self):
+#         return 'superclass'
+#
+# class SubClass(SuperClass):
+#     def __init__(self):
+#         super().__init__()
+#         self.sub_variabila = 12
+#         self.super_variabila = 111
 
-class SuperClass:
-    def __init__(self):
-        self.super_variabila = 11
+#     def metoda1(self):
+#         return 'subclasa'
+#
+# obj = SubClass()
+# print(obj.sub_variabila)
+# print(obj.super_variabila)
+# print(obj.metoda1)
 
-    def metoda1(self):
-        return 'superclass'
 
-class SubClass(SuperClass):
-    def __init__(self):
-        super().__init__()
-        self.sub_variabila = 12
-        self.super_variabila = 111
+# tema calculator cu functii
 
-    def metoda1(self):
-        return 'subclasa'
-
-obj = SubClass()
-print(obj.sub_variabila)
-print(obj.super_variabila)
-print(obj.metoda1)
+class Calculator:
+    def add(self, a, b):
+        self.a = a
+        self.b = b
+        r = self.a + self.b
+        return r
+print(r)

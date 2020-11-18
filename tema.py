@@ -18,6 +18,8 @@
 # in cazul in care se introduce una gresita sa ii afiseze utilizatorului acest lucru.
 #Iar daca adresa de email este corecta sa ii confirme acest lucru utilizatorului.
 
+adresa =
+
 
 #3.	Scrieti un program care sa valideze nr de telefon al unui utilizator
 # scris de la tastatura.

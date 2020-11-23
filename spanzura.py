@@ -1,33 +1,33 @@
-#first i have to say, i didn't develope this all by myself. I tried, but with the "display_hangman" function i needed help.
+#spanzuratoarea cu functii inspirat de pe net
 import random
-word_list = ["insert", "your", "words", "in", "this", "python", "list"]
+word_list = ["rosu", "orange", "galben", "verde", "albastru", "indigo", "violet"]
 
-def get_word(word_list):
+def get_word(word_list):    # selectare cuvant aleatoriu
     word = random.choice(word_list)
     return word.upper()
 
 
-def play(word):
+def play(word):             # incepe jocul
     word_completion = "_" * len(word)
     guessed = False
     guessed_letters = []
     guessed_words = []
     tries = 6
-    print("Let's play Hangman")
+    print("Sa jucam Spanzuratoarea")
     print(display_hangman(tries))
     print(word_completion)
     print("\n")
     while not guessed and tries > 0:
-        guess = input("guess a letter or word: ").upper()
+        guess = input("ghiceste o litera: ").upper()
         if len(guess) == 1 and guess.isalpha():
             if guess in guessed_letters:
-                print("you already tried", guess, "!")
+                print("ai incercat deja litera", guess, "!")
             elif guess not in word:
-                print(guess, "isn't in the word :(")
+                print(guess, "nu exista in cuvant :(")
                 tries -= 1
                 guessed_letters.append(guess)
             else:
-                print("Nice one,", guess, "is in the word!")
+                print("Bravo,", guess, "exista in cuvant!")
                 guessed_letters.append(guess)
                 word_as_list = list(word_completion)
                 indices = [i for i, letter in enumerate(word) if letter == guess]
@@ -38,9 +38,9 @@ def play(word):
                     guessed = True
         elif len(guess) == len(word) and guess.isalpha():
             if guess in guessed_words:
-                print("You already tried ", guess, "!")
+                print("Ai incercat deja ", guess, "!")
             elif guess != word:
-                print(guess, " ist nicht das Wort :(")
+                print(guess, " nu ai ghicit cuvantul :(")
                 tries -= 1
                 guessed_words.append(guess)
             else:
@@ -52,9 +52,9 @@ def play(word):
         print(word_completion)
         print("\n")
     if guessed:
-        print("Good Job, you guessed the word!")
+        print("Bravo, ai ghicit cuvantul!")
     else:
-        print("I'm sorry, but you ran out of tries. The word was " + word + ". Maybe next time!")
+        print("Imi pare rau, ai epuizat toate incercarile. Cuvantul era " + word + ". Poate ai noroc data viitoare!")
 
 
 
@@ -129,7 +129,7 @@ def display_hangman(tries):
 def main():
     word = get_word(word_list)
     play(word)
-    while input("Again? (Y/N) ").upper() == "Y":
+    while input("Joci din nou? (Y/N) ").upper() == "Y":
         word = get_word(word_list)
         play(word)
 

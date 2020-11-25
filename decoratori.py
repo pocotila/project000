@@ -1,10 +1,13 @@
-def aduna(tip=1):
-    def aritmetic(*a):
-        rez = 0
-        for i in a:
-            rez = += i /len(a)
-        return rez
-   def adunare(*a):
-       rez = 0
-       for i in a:
-        rez += 1
+def message(functie):
+    def functie_parametru(parametru):
+        if parametru == 'Alex':
+            return f"{functie(parametru)} si am varsta de 15 ani"
+        else:
+           return functie(parametru)
+    return functie_parametru
+
+@message
+def user1(nume):
+    return f"Numele meu este {nume}"
+
+print(user1('Alex'))

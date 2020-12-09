@@ -15,9 +15,7 @@
 
 #message(numar_2=3, numar_1=20)
 
-def inmultire(a: int, b: int) -> (bool, int):
-    rezultat = a * b
-    return True, rezultat
+
 
 print(inmultire(1,2))
 

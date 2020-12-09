@@ -1,13 +1,13 @@
 # 1.
 # num_calls = 0
 #
-# def exercitiu(x):
+# def exercitiu.py(x):
 #     global num_calls
 #     num_calls = 3
 #     num_calls += 1
 #     return x * x
 #
-# print(exercitiu(4))
+# print(exercitiu.py(4))
 #
 # rezultat: 16
 
@@ -59,13 +59,13 @@
 # rezultat: [0, 1, 2]
 
 # 8.
-# def exercitiu(i):
+# def exercitiu.py(i):
 #     for i in range(i):
 #         return i
 #
-# x = exercitiu(3)
+# x = exercitiu.py(3)
 # print(x)
-#
+# #
 # rezultat: 0    ??
 
 # 9.
@@ -272,3 +272,22 @@
 # (self,x), dar la apelare noi transmitem doar un singur parametru
 
 # 28.
+
+
+
+# # high_and_low = ("1 2 3 4 5")  # return "5 1"
+
+# def high_and_low(numbers):
+#     values = list(map(int, numbers.split()))
+#     print (str(max(values)) + ' ' + str(min(values)))
+
+
+
+# def high_and_low(numbers):
+#     values = list(map(int, numbers.split(' ')))
+#     print(str(max(values)) + ' ' + str(min(values)))
+#
+#
+# high_and_low("1 2 3 4 5")
+# high_and_low("1 2 -3 4 5")
+# high_and_low("1 9 3 4 -5")

@@ -55,10 +55,10 @@
 
 # tema calculator cu functii
 
-class Calculator:
-    def add(self, a, b):
-        self.a = a
-        self.b = b
-        r = self.a + self.b
-        return r
-print(r)
+# class Calculator:
+#     def add(self, a, b):
+#         self.a = a
+#         self.b = b
+#         r = self.a + self.b
+#         return r
+# print(r)

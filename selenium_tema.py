@@ -7,24 +7,52 @@
 #  Se doreste realizarea unui tabel comun pe judete pentru ultimele 7 zile de la data 20.01.
 # Se exporta datele in Excel.
 
-import requests
 
 from selenium import webdriver
 
-from webdriver_manager.chrome import ChromeDriverManager
+import pandas as pd
 
-driver = webdriver.Chrome(ChromeDriverManager().install())
+driver = webdriver.Chrome(executable_path="C:\Chrome\chromedriver.exe")
 
-url = 'https://www.mai.gov.ro/informare-covid-19-grupul-de-comunicare-strategica-20-ianuarie-ora-13-00/'
+ziua = "21"
+# zile = [21, 22, 23, 24, 25, 26, 27]
+#
+# for zi in zile:
+#     url = "https://www.mai.gov.ro/informare-covid-19-grupul-de-comunicare-strategica-" + str(zi) + "-ianuarie-ora-13-00/"
 
-driver.get(url)
+# url = 'https://www.mai.gov.ro/informare-covid-19-grupul-de-comunicare-strategica-20-ianuarie-ora-13-00/'
 
-response = requests.get(url)
 
-if response.status_code == 200:
-    print('Success!')
-elif response.status_code == 404:
-    print('Not Found.')
+driver.get(
+     f'https://www.mai.gov.ro/informare-covid-19-grupul-de-comunicare-strategica-{ziua}-ianuarie-ora-13-00/')
+
+lista1 = []
+
+lista2 = []
+
+for i in range (1,44): # rows
+    for j in range (1,5): # columns
+        data = lista1.append(driver.find_element_by_xpath(
+            f"//table/tbody/tr[{i}]/td[{j}]").text)
+
+# print(lista1)
+
+lista2 = [lista1[i:i+5] for i in range(0, len(lista1), 5)]
+
+print(lista2)
+
+# de studiat export to xls folosind pandas?
+# df = pd.DataFrame()
+
+
+driver.close()
+
+
+
+
+
+
+
 
 
 

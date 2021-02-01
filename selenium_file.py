@@ -14,19 +14,19 @@ get_element2 = driver.find_element_by_id('lastname')
 get_element2.send_keys('Maria')
 
 get_element3 = driver.find_element_by_id('email_address')
-get_element3.send_keys('alfabet@tester.ro')
+get_element3.send_keys('iulian.pocotila@gmail.com')
 
 get_element4 = driver.find_element_by_id('customers_gender')
-get_element4.send_keys('Doamna')
+get_element4.send_keys('Domnul')
 
 get_element5 = driver.find_element_by_id('telephone')
 get_element5.send_keys('0721330799')
 
 get_element6 = driver.find_element_by_id('street_address')
-get_element6.send_keys('Iasi1')
+get_element6.send_keys('Muresului')
 
 get_element7 = driver.find_element_by_id('entry_suburb')
-get_element7.send_keys('Ploiesti')
+get_element7.send_keys('Cluj-Napoca')
 
 from selenium.webdriver.common.keys import Keys
 html = driver.find_element_by_tag_name('html')

@@ -8,4 +8,19 @@
 # Se exporta datele in Excel.
 
 import requests
+from bs4 import BeautifulSoup
+import pandas as pd
+import datetime
+
+url = 'https://www.mai.gov.ro/informare-covid-19-grupul-de-comunicare-strategica-20-ianuarie-ora-13-00/'
+
+def get_table(url):
+    r = requests.get(url)
+    soup = BeautifulSoup(r.text, 'html.parser')
+    tablelist = []
+    table = soup.find('table, class = ')
+# print(r.text)
+
+
+
 
